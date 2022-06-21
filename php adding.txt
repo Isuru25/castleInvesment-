@@ -1,0 +1,53 @@
+ <section id="about" class="about">
+ <div class="container">
+	  
+
+<div id="content">
+<?php
+			$link_address = 'formpage/formpage.html';
+        	$get_data = "SELECT * FROM news";
+        	$run_data = mysqli_query($con,$get_data);
+
+        	while($row = mysqli_fetch_array($run_data))
+        	{
+        		$id = $row['id'];
+        		$name = $row['name'];
+        		$description = $row['description'];
+        		$image = $row['image'];
+
+        		echo "
+
+        		
+				
+				<div class=\"name\">$name</div>
+				<br>
+				
+				
+				<div class='text-center'><img src='images/$image' style='width:400px; height:250px;'></div>
+				
+				<br>
+				
+				<div class='text-center'>$description   
+				
+				<div class=\"read\"> <a href='$link_address'>Read More » </a> </div>
+				
+				</div>
+				
+				<br>	
+			
+				
+				
+				
+				
+				
+			
+
+
+        		";
+        	}
+
+        	?>
+
+  
+   </div>
+    </section><!-- End About Section -->
